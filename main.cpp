@@ -60,7 +60,7 @@ int main(int argc, char** argv) {
     return 0;
 }
 //cv::Mat img = cv::imread("C:/Users/victo/Documents/MultimediaApplicationProjects/OpenCvWorkshop/OpenCVTP2/x64/Release/mainWhali.png");
-
+//update
 
 //cv::imshow("windows", img);
 //cv::waitKey(0); //always imshow and waitkey together
