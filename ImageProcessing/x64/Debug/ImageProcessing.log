@@ -1,0 +1,7 @@
+﻿  main.cpp
+C:\Users\victo\Documents\MultimediaApplicationProjects\OpenCvWorkshop\ImageProcessing\main.cpp(1,9): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+C:\Users\victo\Documents\MultimediaApplicationProjects\OpenCvWorkshop\ImageProcessing\main.cpp(2,9): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+main.obj : error LNK2019: symbole externe non résolu "public: __cdecl cv::Mat::~Mat(void)" (??1Mat@cv@@QEAA@XZ) référencé dans la fonction main
+main.obj : error LNK2019: symbole externe non résolu "class cv::Mat __cdecl cv::imread(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)" (?imread@cv@@YA?AVMat@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z) référencé dans la fonction main
+main.obj : error LNK2019: symbole externe non résolu "void __cdecl cv::imshow(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class cv::debug_build_guard::_InputArray const &)" (?imshow@cv@@YAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV_InputArray@debug_build_guard@1@@Z) référencé dans la fonction main
+C:\Users\victo\Documents\MultimediaApplicationProjects\OpenCvWorkshop\ImageProcessing\x64\Debug\ImageProcessing.exe : fatal error LNK1120: 3 externes non résolus
