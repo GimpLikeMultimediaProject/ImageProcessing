@@ -15,12 +15,12 @@ int dilation_active = 0;
 int dilation_elem = 0;
 int dilation_size = 0;
 int resize_active = 0;
-int resize_factor = 100;  // Start with 100% to avoid initial resizing
+int resize_factor = 100;  
 int brightness_active = 0;
-int brightness_factor = 100;  // 100% means no change
+int brightness_factor = 100;
 int canny_active = 0;
-int lowThreshold = 50;  // Initial low threshold for Canny
-int highThreshold = 150;  // Initial high threshold for Canny
+int lowThreshold = 50;  
+int highThreshold = 150; 
 
 int const max_elem = 2;
 int const max_kernel_size = 21;
@@ -61,11 +61,12 @@ int main(int argc, char** argv) {
     }
 
     namedWindow("Combined Demo", WINDOW_AUTOSIZE);
+    namedWindow("Trackbars", WINDOW_AUTOSIZE);
 
-    // Increase the size of the window to fit long trackbar titles
-    int control_window_width = 600; // Adjust this value as needed to fit your titles
-    int control_window_height = 600; // Adjust this value as needed for the number of trackbars
-    resizeWindow("Combined Demo", control_window_width, control_window_height);
+    
+    int control_window_width = 600;
+    int control_window_height = 600; 
+    resizeWindow("Trackbars", control_window_width, control_window_height);
 
     CreateTrackbars();
     UpdateImage(0, 0);
@@ -137,23 +138,23 @@ bool LoadVideo(const string& path) {
 }
 
 void CreateTrackbars() {
-    createTrackbar("Erosion Active: 0: Off 1: On", "Combined Demo", &erosion_active, 1, UpdateImage);
-    createTrackbar("Erosion Element: 0: Rect 1: Cross 2: Ellipse", "Combined Demo", &erosion_elem, max_elem, UpdateImage);
-    createTrackbar("Erosion Kernel size: 2n +1", "Combined Demo", &erosion_size, max_kernel_size, UpdateImage);
+    createTrackbar("Erosion Active: 0: Off 1: On", "Trackbars", &erosion_active, 1, UpdateImage);
+    createTrackbar("Erosion Element: 0: Rect 1: Cross 2: Ellipse", "Trackbars", &erosion_elem, max_elem, UpdateImage);
+    createTrackbar("Erosion Kernel size: 2n +1", "Trackbars", &erosion_size, max_kernel_size, UpdateImage);
 
-    createTrackbar("Dilation Active: 0: Off 1: On", "Combined Demo", &dilation_active, 1, UpdateImage);
-    createTrackbar("Dilation Element: 0: Rect 1: Cross 2: Ellipse", "Combined Demo", &dilation_elem, max_elem, UpdateImage);
-    createTrackbar("Dilation Kernel size: 2n +1", "Combined Demo", &dilation_size, max_kernel_size, UpdateImage);
+    createTrackbar("Dilation Active: 0: Off 1: On", "Trackbars", &dilation_active, 1, UpdateImage);
+    createTrackbar("Dilation Element: 0: Rect 1: Cross 2: Ellipse", "Trackbars", &dilation_elem, max_elem, UpdateImage);
+    createTrackbar("Dilation Kernel size: 2n +1", "Trackbars", &dilation_size, max_kernel_size, UpdateImage);
 
-    createTrackbar("Resize Active: 0: Off 1: On", "Combined Demo", &resize_active, 1, UpdateImage);
-    createTrackbar("Resize factor: %", "Combined Demo", &resize_factor, max_resize_factor, UpdateImage);
+    createTrackbar("Resize Active: 0: Off 1: On", "Trackbars", &resize_active, 1, UpdateImage);
+    createTrackbar("Resize factor: %", "Trackbars", &resize_factor, max_resize_factor, UpdateImage);
 
-    createTrackbar("Brightness Active: 0: Off 1: On", "Combined Demo", &brightness_active, 1, UpdateImage);
-    createTrackbar("Brightness factor: %", "Combined Demo", &brightness_factor, max_brightness_factor, UpdateImage);
+    createTrackbar("Brightness Active: 0: Off 1: On", "Trackbars", &brightness_active, 1, UpdateImage);
+    createTrackbar("Brightness factor: %", "Trackbars", &brightness_factor, max_brightness_factor, UpdateImage);
 
-    createTrackbar("Canny Active: 0: Off 1: On", "Combined Demo", &canny_active, 1, UpdateImage);
-    createTrackbar("Low Threshold:", "Combined Demo", &lowThreshold, max_lowThreshold, UpdateImage);
-    createTrackbar("High Threshold:", "Combined Demo", &highThreshold, max_highThreshold, UpdateImage);
+    createTrackbar("Canny Active: 0: Off 1: On", "Trackbars", &canny_active, 1, UpdateImage);
+    createTrackbar("Low Threshold:", "Trackbars", &lowThreshold, max_lowThreshold, UpdateImage);
+    createTrackbar("High Threshold:", "Trackbars", &highThreshold, max_highThreshold, UpdateImage);
 }
 
 void UpdateImage(int, void*) {
@@ -254,4 +255,3 @@ void StitchImages(vector<String>& imagePaths) {
 // //C:\Users\victo\Documents\MultimediaApplicationProjects\OpenCvWorkshop\OpenCVTP2\x64\Release\mainWhali.png
 //C:\Users\victo\Documents\MultimediaApplicationProjects\OpenCvWorkshop\OpenCVTP2\x64\Release\video.mp4
 //C:\\Users\\victo\\Documents\\MultimediaApplicationProjects\\OpenCvWorkshop\\OpenCVTP2\\x64\\Release\\video.mp4
-
